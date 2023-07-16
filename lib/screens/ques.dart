@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz/screens/home.dart';
 import 'package:quiz/screens/result.dart';
 
 
@@ -8,109 +9,57 @@ class ques extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 206, 232, 245),
-      appBar: AppBar(
-        title: Column(
-          children: [const Text("Sport test"), Text("3/20")],
-        ),
-        centerTitle: true,
-        titleTextStyle:
-            TextStyle(color: Color.fromARGB(255, 206, 232, 245), fontSize: 25),
-        actions: [Icon(Icons.question_answer), Padding(padding: EdgeInsets.all(3))],
-      ),
-      body: Column(
-    
-        children: [
-          const SizedBox(
-            height: 15,
-          ),
-          const Text(
-            "Question",
-            style: TextStyle(fontSize: 30, color: Colors.deepOrangeAccent),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Text(
-            "ما هو النادي الاسبق لللاعب امام عاشور",
-            style: TextStyle(fontSize: 30, color: Colors.deepOrangeAccent),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Text(
-            "Answers",
-            style: TextStyle(fontSize: 30, color: Colors.deepOrangeAccent),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const score()),
-                );
-              },
-              child: const Text(
-                "الزمالك",
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              )),
-          const SizedBox(
-            height: 15,
-          ),
-          Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
+appBar: AppBar(automaticallyImplyLeading: false,
+
+leading: Center(child: Text("sport questions")),
+leadingWidth: 100,
+title:Column(children: [Text('Question no:'), Text("4/20"),],),
+centerTitle: true,
+actions: [Padding(padding: EdgeInsets.all(10),child: Icon(Icons.sports_baseball_rounded))],
+
+
+
+),
+body: Container(
+  width: double.infinity,
+child: Column(
+  crossAxisAlignment:CrossAxisAlignment.center,
+
+children: [
+  SizedBox(height: 20,),
+Text("Question:"),
+Text(":كم عدد اللاعبين في فريق كره القدم"),
+SizedBox(height: 20,),
+Text("answer:"),
+ElevatedButton(onPressed: (){   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const score()),
-                  );
-                },
-                child: const Text(
-                  "الزمالك",
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                )),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const score()),
-                );
-              },
-              child: const Text(
-                "الزمالك",
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              )),
-          const SizedBox(
-            height: 15,
-          ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const score()),
-                );
-              },
-              child: const Text(
-               "الاهلي ",
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              )),
-        ],
-      ),
+                    MaterialPageRoute(builder: (context) => const score()),
+                    (route) => false,
+                  );}, child: Text("10")),
+ElevatedButton(onPressed: (){   Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const score()),
+                    (route) => false,
+                  );}, child: Text("11")),
+ElevatedButton(onPressed: (){   Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const score()),
+                    (route) => false,
+                  );}, child: Text("12")),
+ElevatedButton(onPressed: (){   Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const score()),
+                    (route) => false,
+                  );}, child: Text("15")),
+
+],
+
+
+),
+
+
+),
+
     );
   }
 }
